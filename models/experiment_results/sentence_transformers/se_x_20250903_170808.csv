@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+sentence_transformers,XGBoost,aggressive,0.9395418700713482,0.9373290226311862,0.94225,0.9397830694427128,0.9848779769365755,fake_news,Features: ['clean_text'],se_x_20250903_170808,2025-09-03T17:08:08.360376

@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+traditional_nlp,SVM,stemmed,0.9464263362122919,0.9371023005384239,0.95725,0.9470690081622557,0.9879091250940085,fake_news,TF-IDF with stemmed processing,tr_s_20250902_231849,2025-09-02T23:18:49.561800

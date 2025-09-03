@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+sentence_transformers,SVC,aggressive,0.9548128676930779,0.9480423540999754,0.9625,0.9552164743828309,0.9903468914514916,fake_news,"Features: ['clean_text', 'year', 'quarter', 'is_weekend']",se_s_20250903_202343,2025-09-03T20:23:43.427192

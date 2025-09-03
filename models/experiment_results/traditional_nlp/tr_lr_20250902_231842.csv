@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+traditional_nlp,Logistic Regression,stemmed,0.9444235824258356,0.9317629917435648,0.95925,0.9453067257945307,0.9870249435948859,fake_news,TF-IDF with stemmed processing,tr_lr_20250902_231842,2025-09-02T23:18:42.792748

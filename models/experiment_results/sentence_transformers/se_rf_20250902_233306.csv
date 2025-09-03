@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+sentence_transformers,Random Forest,basic_cleaning,0.918012266866942,0.9027209246327955,0.93725,0.9196614743039372,0.97703644397092,fake_news,Used all-MiniLM-L6-v2 embeddings,se_rf_20250902_233306,2025-09-02T23:33:06.152162

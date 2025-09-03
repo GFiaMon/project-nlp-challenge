@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+traditional_nlp,Naive Bayes,lemmatized,0.9300287895856804,0.9361216730038023,0.92325,0.9296412838263058,0.981878854349461,fake_news,TF-IDF with lemmatized processing,tr_nb_20250902_231856,2025-09-02T23:18:56.995133
