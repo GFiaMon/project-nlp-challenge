@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+traditional_nlp,Random Forest,original,0.9826010764801603,0.969822341202239,0.99625,0.9828585522259218,0.9986821885184256,fake_news,TF-IDF with original processing,tr_rf_20250904_024509,2025-09-04T02:45:09.919157

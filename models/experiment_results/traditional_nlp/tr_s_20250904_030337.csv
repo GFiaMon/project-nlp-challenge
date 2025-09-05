@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+traditional_nlp,SVM,lemmatized,0.9964951808737014,0.9957563654518222,0.99725,0.9965026230327254,0.9998670092755075,fake_news,TF-IDF with lemmatized processing,tr_s_20250904_030337,2025-09-04T03:03:37.393172

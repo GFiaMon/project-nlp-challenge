@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+traditional_nlp,Logistic Regression,minimal_cleaning,0.994993115533859,0.9964894684052157,0.9935,0.9949924887330996,0.9991426422662322,fake_news,"Minimal cleaning (HTML/URLs only), simple BoW, no duplicate removal",tr_lr_20250904_133155,2025-09-04T13:31:55.824523

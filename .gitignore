@@ -10,6 +10,8 @@ env/
 
 draft/
 
+dataset/
+
 # Python cache and build files
 __pycache__/
 *.py[cod]

@@ -101,6 +101,23 @@ def clean_text(text):
 
 # Option 1: Gentle Cleaning (Recommended)
 
+# Simple cleaning function (minimal HTML/URL removal only)
+def minimal_clean(text):
+    """Minimal cleaning: only remove HTML tags and URLs, keep everything else"""
+    if pd.isna(text) or text == '':
+        return ""
+    
+    text = str(text)
+    # Remove HTML tags
+    text = re.sub(r'<.*?>', '', text)
+    # Remove URLs
+    text = re.sub(r'https?://\S+|www\.\S+', '', text)
+    # Normalize whitespace only
+    text = re.sub(r'\s+', ' ', text)
+    text = text.strip()
+    
+    return text
+
 def gentle_clean_text(text):
     """
     Gentle text cleaning that preserves meaningful punctuation and abbreviations.
@@ -120,7 +137,7 @@ def gentle_clean_text(text):
     text = str(text)
     
     # 1. Convert to lowercase
-    text = text.lower()
+    # text = text.lower()
     
     # 2. Remove URLs
     text = re.sub(r'https?://\S+|www\.\S+', '', text)
@@ -271,6 +288,75 @@ def handle_missing_data(df):
             df_clean[col] = df_clean[col].fillna('')
     
     return df_clean
+
+# =====================
+def analyze_duplicates(df):
+    """
+    Analyze duplicates in a DataFrame
+    """
+    analysis = {
+        'exact_duplicates': df.duplicated().sum(),
+        'title_duplicates': df.duplicated(subset=['title']).sum(),
+        'text_duplicates': df.duplicated(subset=['text']).sum(),
+        'conflicting_titles': len(df.groupby('title')['label'].nunique()[df.groupby('title')['label'].nunique() > 1]),
+        'conflicting_texts': len(df.groupby('text')['label'].nunique()[df.groupby('text')['label'].nunique() > 1])
+    }
+    return analysis
+
+def remove_duplicates(df, subset=None):
+    """
+    Remove duplicates from DataFrame
+    """
+    if subset:
+        return df.drop_duplicates(subset=subset)
+    else:
+        return df.drop_duplicates()
+
+# ----
+# Handle Duplicates
+
+def handle_duplicates(df, strategy='remove', subset=None):
+    """
+    Handle duplicates based on specified strategy
+    
+    Parameters:
+    strategy: 'remove' to remove duplicates, 'keep_first' to keep first occurrence
+    subset: columns to consider for duplicate identification
+    """
+    df_clean = df.copy()
+    
+    if strategy == 'remove':
+        if subset:
+            # Remove duplicates based on specific columns
+            duplicates = df_clean.duplicated(subset=subset)
+            print(f"Removing {duplicates.sum()} duplicates based on {subset}")
+            df_clean = df_clean[~duplicates]
+        else:
+            # Remove exact duplicates
+            duplicates = df_clean.duplicated()
+            print(f"Removing {duplicates.sum()} exact duplicates")
+            df_clean = df_clean[~duplicates]
+    
+    elif strategy == 'keep_first':
+        if subset:
+            df_clean = df_clean.drop_duplicates(subset=subset, keep='first')
+            print(f"Kept first occurrence of duplicates based on {subset}")
+        else:
+            df_clean = df_clean.drop_duplicates(keep='first')
+            print("Kept first occurrence of exact duplicates")
+    
+    return df_clean
+
+# Simple delete 
+def remove_duplicates(df, subset=None):
+    """
+    Remove duplicates from DataFrame
+    """
+    if subset:
+        return df.drop_duplicates(subset=subset)
+    else:
+        return df.drop_duplicates()
+
 
 
 # Date cleaning / engineering:
@@ -507,7 +593,8 @@ def run_clean_pipeline(input_path, output_path, cleaning_strategy='basic'):
 __all__ = [
     'clean_text', 
     'basic_clean_text', 
-    'aggressive_clean_text', 
+    'aggressive_clean_text',
+    'handle_duplicates', 
     'handle_missing_data',
     'clean_date_column',
     'engineer_text_features', 

@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+traditional_nlp,Logistic Regression,no cleaning no dups,0.9961001383821865,0.9957114026236125,0.9964655390053017,0.9960883280757098,0.9991037553458153,fake_news,"No cleaning + duplicate removal, simple BoW (CountVectorizer)",tr_lr_20250904_133202,2025-09-04T13:32:02.030594

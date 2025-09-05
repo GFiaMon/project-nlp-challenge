@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+sentence_transformers,SVC,aggressive,0.9407885505822927,0.9427841634738187,0.9490871689380304,0.9459251665812404,0.9875622013023223,fake_news,"Features: ['title_length', 'title_word_count', 'text_length', 'text_word_count', 'title_capitals_ratio', 'text_capitals_ratio', 'title_exclamation', 'title_question', 'title_quotes', 'title_all_caps_words', 'sensational_score', 'year', 'quarter', 'is_weekend']",se_s_20250905_020552,2025-09-05T02:05:52.518514

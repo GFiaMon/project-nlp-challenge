@@ -1,0 +1,2 @@
+experiment_type,model_name,preprocessing,accuracy,precision,recall,f1_score,roc_auc,dataset,notes,experiment_id,timestamp
+sentence_transformers,SVC,aggressive,0.9489266170899396,0.9440665154950869,0.9634867575212137,0.9536777806057521,0.9891368982151555,fake_news,"Features: ['clean_text', 'title_all_caps_words', 'title_sensational_count', 'sensational_score']",se_s_20250905_002456,2025-09-05T00:24:56.338071
